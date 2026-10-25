@@ -1,0 +1,319 @@
+{
+  "_catatan": "Kamus aplikasi untuk actions/open_app.py (Windows). Setiap aplikasi = entri sendiri; nama dicocokkan PERSIS dengan 'aliases' (huruf besar/kecil & spasi diabaikan) — TIDAK ada tebakan substring. 'launch' dicoba berurutan: exe (path absolut, %VAR% diperluas), cmd (nama program PERSIS di PATH / App Paths registry), terminal (program CLI dibuka di jendela terminal baru), uri, appid (aplikasi Microsoft Store). Verifikasi: proses baru dengan nama di 'process_names' ATAU jendela yang judulnya memuat 'title_words' dan tidak memuat 'not_title_words'. Path WorkBuddy/OpenCode Desktop mungkin perlu disesuaikan dengan instalasi Anda.",
+  "_settings": {
+    "allow_start_menu_search": false,
+    "verify_seconds": 8
+  },
+  "apps": {
+    "opencode": {
+      "display": "OpenCode",
+      "aliases": ["opencode", "open code", "open-code", "opencode ai", "opencode cli"],
+      "launch": [
+        {"kind": "exe", "path": "%LOCALAPPDATA%\\Programs\\OpenCode\\OpenCode.exe"},
+        {"kind": "exe", "path": "%LOCALAPPDATA%\\Programs\\opencode-desktop\\OpenCode.exe"},
+        {"kind": "terminal", "name": "opencode"},
+        {"kind": "terminal", "path": "%USERPROFILE%\\.opencode\\bin\\opencode.exe"}
+      ],
+      "process_names": ["opencode.exe", "opencode"],
+      "title_words": ["opencode"],
+      "not_title_words": ["cursor", "visual studio code"]
+    },
+    "cursor": {
+      "display": "Cursor",
+      "aliases": ["cursor", "cursor ai", "cursor editor"],
+      "launch": [
+        {"kind": "exe", "path": "%LOCALAPPDATA%\\Programs\\cursor\\Cursor.exe"},
+        {"kind": "exe", "path": "%ProgramFiles%\\Cursor\\Cursor.exe"},
+        {"kind": "cmd", "name": "cursor"}
+      ],
+      "process_names": ["cursor.exe"],
+      "title_words": ["cursor"],
+      "not_title_words": []
+    },
+    "vscode": {
+      "display": "Visual Studio Code",
+      "aliases": ["vscode", "vs code", "visual studio code", "code", "vs-code"],
+      "launch": [
+        {"kind": "exe", "path": "%LOCALAPPDATA%\\Programs\\Microsoft VS Code\\Code.exe"},
+        {"kind": "exe", "path": "%ProgramFiles%\\Microsoft VS Code\\Code.exe"},
+        {"kind": "cmd", "name": "code", "exclude_path_words": ["cursor", "windsurf", "trae"]}
+      ],
+      "process_names": ["code.exe"],
+      "title_words": ["visual studio code"],
+      "not_title_words": ["cursor"]
+    },
+    "workbuddy": {
+      "display": "WorkBuddy",
+      "aliases": ["workbuddy", "work buddy", "work-buddy"],
+      "launch": [
+        {"kind": "exe", "path": "%LOCALAPPDATA%\\Programs\\WorkBuddy\\WorkBuddy.exe"},
+        {"kind": "exe", "path": "%ProgramFiles%\\WorkBuddy\\WorkBuddy.exe"},
+        {"kind": "cmd", "name": "workbuddy"}
+      ],
+      "process_names": ["workbuddy.exe"],
+      "title_words": ["workbuddy"],
+      "not_title_words": []
+    },
+    "windsurf": {
+      "display": "Windsurf",
+      "aliases": ["windsurf"],
+      "launch": [
+        {"kind": "exe", "path": "%LOCALAPPDATA%\\Programs\\Windsurf\\Windsurf.exe"},
+        {"kind": "cmd", "name": "windsurf"}
+      ],
+      "process_names": ["windsurf.exe"],
+      "title_words": ["windsurf"],
+      "not_title_words": []
+    },
+    "trae": {
+      "display": "Trae",
+      "aliases": ["trae"],
+      "launch": [
+        {"kind": "exe", "path": "%LOCALAPPDATA%\\Programs\\Trae\\Trae.exe"},
+        {"kind": "cmd", "name": "trae"}
+      ],
+      "process_names": ["trae.exe"],
+      "title_words": ["trae"],
+      "not_title_words": []
+    },
+    "whatsapp": {
+      "display": "WhatsApp",
+      "aliases": ["whatsapp", "whats app", "wa", "whatsapp desktop"],
+      "launch": [
+        {"kind": "exe", "path": "%LOCALAPPDATA%\\WhatsApp\\WhatsApp.exe"},
+        {"kind": "appid", "id": "5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App"},
+        {"kind": "uri", "uri": "whatsapp:"}
+      ],
+      "process_names": ["whatsapp.exe", "whatsapp.root.exe"],
+      "title_words": ["whatsapp"],
+      "not_title_words": ["chrome", "edge", "firefox"]
+    },
+    "telegram": {
+      "display": "Telegram",
+      "aliases": ["telegram", "telegram desktop", "tele"],
+      "launch": [
+        {"kind": "exe", "path": "%APPDATA%\\Telegram Desktop\\Telegram.exe"},
+        {"kind": "exe", "path": "%LOCALAPPDATA%\\Programs\\Telegram Desktop\\Telegram.exe"},
+        {"kind": "appid", "id": "TelegramMessengerLLP.TelegramDesktop_t4vj0pshhgkwm!Telegram.TelegramDesktop.Store"},
+        {"kind": "uri", "uri": "tg://"}
+      ],
+      "process_names": ["telegram.exe"],
+      "title_words": ["telegram"],
+      "not_title_words": ["chrome", "edge", "firefox"]
+    },
+    "chrome": {
+      "display": "Google Chrome",
+      "aliases": ["chrome", "google chrome"],
+      "launch": [
+        {"kind": "exe", "path": "%ProgramFiles%\\Google\\Chrome\\Application\\chrome.exe"},
+        {"kind": "exe", "path": "%ProgramFiles(x86)%\\Google\\Chrome\\Application\\chrome.exe"},
+        {"kind": "exe", "path": "%LOCALAPPDATA%\\Google\\Chrome\\Application\\chrome.exe"},
+        {"kind": "cmd", "name": "chrome"}
+      ],
+      "process_names": ["chrome.exe"],
+      "title_words": ["google chrome"],
+      "not_title_words": []
+    },
+    "edge": {
+      "display": "Microsoft Edge",
+      "aliases": ["edge", "microsoft edge", "msedge"],
+      "launch": [
+        {"kind": "exe", "path": "%ProgramFiles(x86)%\\Microsoft\\Edge\\Application\\msedge.exe"},
+        {"kind": "exe", "path": "%ProgramFiles%\\Microsoft\\Edge\\Application\\msedge.exe"},
+        {"kind": "cmd", "name": "msedge"}
+      ],
+      "process_names": ["msedge.exe"],
+      "title_words": ["edge"],
+      "not_title_words": []
+    },
+    "firefox": {
+      "display": "Firefox",
+      "aliases": ["firefox", "mozilla firefox"],
+      "launch": [
+        {"kind": "exe", "path": "%ProgramFiles%\\Mozilla Firefox\\firefox.exe"},
+        {"kind": "cmd", "name": "firefox"}
+      ],
+      "process_names": ["firefox.exe"],
+      "title_words": ["firefox"],
+      "not_title_words": []
+    },
+    "brave": {
+      "display": "Brave",
+      "aliases": ["brave", "brave browser"],
+      "launch": [
+        {"kind": "exe", "path": "%ProgramFiles%\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"},
+        {"kind": "exe", "path": "%LOCALAPPDATA%\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"},
+        {"kind": "cmd", "name": "brave"}
+      ],
+      "process_names": ["brave.exe"],
+      "title_words": ["brave"],
+      "not_title_words": []
+    },
+    "opera": {
+      "display": "Opera",
+      "aliases": ["opera", "opera gx"],
+      "launch": [
+        {"kind": "exe", "path": "%LOCALAPPDATA%\\Programs\\Opera\\launcher.exe"},
+        {"kind": "exe", "path": "%LOCALAPPDATA%\\Programs\\Opera GX\\launcher.exe"},
+        {"kind": "cmd", "name": "opera"}
+      ],
+      "process_names": ["opera.exe"],
+      "title_words": ["opera"],
+      "not_title_words": []
+    },
+    "spotify": {
+      "display": "Spotify",
+      "aliases": ["spotify"],
+      "launch": [
+        {"kind": "exe", "path": "%APPDATA%\\Spotify\\Spotify.exe"},
+        {"kind": "appid", "id": "SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify"}
+      ],
+      "process_names": ["spotify.exe"],
+      "title_words": ["spotify"],
+      "not_title_words": []
+    },
+    "discord": {
+      "display": "Discord",
+      "aliases": ["discord"],
+      "launch": [
+        {"kind": "exe", "path": "%LOCALAPPDATA%\\Discord\\Update.exe", "args": ["--processStart", "Discord.exe"]}
+      ],
+      "process_names": ["discord.exe"],
+      "title_words": ["discord"],
+      "not_title_words": []
+    },
+    "notepad": {
+      "display": "Notepad",
+      "aliases": ["notepad", "catatan", "notepad windows"],
+      "launch": [{"kind": "cmd", "name": "notepad"}],
+      "process_names": ["notepad.exe"],
+      "title_words": ["notepad"],
+      "not_title_words": []
+    },
+    "calculator": {
+      "display": "Calculator",
+      "aliases": ["calculator", "kalkulator", "calc"],
+      "launch": [{"kind": "cmd", "name": "calc"}],
+      "process_names": ["calculatorapp.exe", "calc.exe"],
+      "title_words": ["calculator", "kalkulator"],
+      "not_title_words": []
+    },
+    "explorer": {
+      "display": "File Explorer",
+      "aliases": ["explorer", "file explorer", "windows explorer", "penjelajah file"],
+      "launch": [{"kind": "cmd", "name": "explorer"}],
+      "process_names": [],
+      "title_words": [],
+      "any_new_window": true,
+      "not_title_words": []
+    },
+    "terminal": {
+      "display": "Windows Terminal",
+      "aliases": ["terminal", "windows terminal", "wt"],
+      "launch": [{"kind": "cmd", "name": "wt"}],
+      "process_names": ["windowsterminal.exe"],
+      "title_words": [],
+      "any_new_window": true,
+      "not_title_words": []
+    },
+    "cmd": {
+      "display": "Command Prompt",
+      "aliases": ["cmd", "command prompt"],
+      "launch": [{"kind": "cmd", "name": "cmd", "new_console": true}],
+      "process_names": ["cmd.exe"],
+      "title_words": ["cmd", "command prompt"],
+      "not_title_words": []
+    },
+    "powershell": {
+      "display": "PowerShell",
+      "aliases": ["powershell", "windows powershell"],
+      "launch": [{"kind": "cmd", "name": "powershell", "new_console": true}],
+      "process_names": ["powershell.exe"],
+      "title_words": ["powershell"],
+      "not_title_words": []
+    },
+    "settings": {
+      "display": "Settings",
+      "aliases": ["settings", "pengaturan", "windows settings", "setelan"],
+      "launch": [{"kind": "uri", "uri": "ms-settings:"}],
+      "process_names": ["systemsettings.exe"],
+      "title_words": ["settings", "pengaturan"],
+      "not_title_words": []
+    },
+    "task manager": {
+      "display": "Task Manager",
+      "aliases": ["task manager", "taskmgr", "pengelola tugas"],
+      "launch": [{"kind": "cmd", "name": "taskmgr"}],
+      "process_names": ["taskmgr.exe"],
+      "title_words": ["task manager", "pengelola tugas"],
+      "not_title_words": []
+    },
+    "paint": {
+      "display": "Paint",
+      "aliases": ["paint", "mspaint", "ms paint"],
+      "launch": [{"kind": "cmd", "name": "mspaint"}],
+      "process_names": ["mspaint.exe"],
+      "title_words": ["paint"],
+      "not_title_words": []
+    },
+    "word": {
+      "display": "Microsoft Word",
+      "aliases": ["word", "microsoft word", "ms word", "winword"],
+      "launch": [{"kind": "cmd", "name": "winword"}],
+      "process_names": ["winword.exe"],
+      "title_words": ["word"],
+      "not_title_words": []
+    },
+    "excel": {
+      "display": "Microsoft Excel",
+      "aliases": ["excel", "microsoft excel", "ms excel"],
+      "launch": [{"kind": "cmd", "name": "excel"}],
+      "process_names": ["excel.exe"],
+      "title_words": ["excel"],
+      "not_title_words": []
+    },
+    "powerpoint": {
+      "display": "Microsoft PowerPoint",
+      "aliases": ["powerpoint", "microsoft powerpoint", "ppt", "powerpnt"],
+      "launch": [{"kind": "cmd", "name": "powerpnt"}],
+      "process_names": ["powerpnt.exe"],
+      "title_words": ["powerpoint"],
+      "not_title_words": []
+    },
+    "steam": {
+      "display": "Steam",
+      "aliases": ["steam"],
+      "launch": [
+        {"kind": "exe", "path": "%ProgramFiles(x86)%\\Steam\\steam.exe"},
+        {"kind": "uri", "uri": "steam://open/main"}
+      ],
+      "process_names": ["steam.exe", "steamwebhelper.exe"],
+      "title_words": ["steam"],
+      "not_title_words": []
+    },
+    "obsidian": {
+      "display": "Obsidian",
+      "aliases": ["obsidian"],
+      "launch": [{"kind": "exe", "path": "%LOCALAPPDATA%\\Programs\\Obsidian\\Obsidian.exe"}],
+      "process_names": ["obsidian.exe"],
+      "title_words": ["obsidian"],
+      "not_title_words": []
+    },
+    "notion": {
+      "display": "Notion",
+      "aliases": ["notion"],
+      "launch": [{"kind": "exe", "path": "%LOCALAPPDATA%\\Programs\\Notion\\Notion.exe"}],
+      "process_names": ["notion.exe"],
+      "title_words": ["notion"],
+      "not_title_words": []
+    },
+    "zoom": {
+      "display": "Zoom",
+      "aliases": ["zoom"],
+      "launch": [{"kind": "exe", "path": "%APPDATA%\\Zoom\\bin\\Zoom.exe"}],
+      "process_names": ["zoom.exe"],
+      "title_words": ["zoom"],
+      "not_title_words": []
+    }
+  }
+}

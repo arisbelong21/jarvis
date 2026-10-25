@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JARVIS | Advanced Neural Interface</title>
+    <meta name="description" content="Premium AI Command Center with Glassmorphism Interface">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Project Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Background Ambient Elements -->
+        <div class="ambient-glow glow-1"></div>
+        <div class="ambient-glow glow-2"></div>
+        <div class="ambient-glow glow-3"></div>
+
+        <!-- Top Navigation Bar -->
+        <header class="main-header">
+            <div class="brand-section">
+                <div class="logo-container">
+                    <div class="arc-reactor">
+                        <div class="core"></div>
+                        <div class="ring"></div>
+                    </div>
+                    <h1 class="brand-text">JARVIS <span class="version">v2.0</span></h1>
+                </div>
+            </div>
+            <div class="system-stats">
+                <div class="stat-item">
+                    <i class="fa-solid fa-microchip"></i>
+                    <span id="cpu-usage">CPU: 12%</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-memory"></i>
+                    <span id="ram-usage">RAM: 4.2GB</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-wifi"></i>
+                    <span id="connection-status">Encrypted</span>
+                </div>
+                <div class="system-time" id="digital-clock">00:00:00</div>
+            </div>
+        </header>
+
+        <main class="dashboard-grid">
+            <!-- Left Panel: System Controls & Logs -->
+            <aside class="side-panel left-panel">
+                <div class="glass-card control-module">
+                    <div class="card-header">
+                        <h3><i class="fa-solid fa-sliders"></i> System Controls</h3>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-item">
+                            <span>Voice Recognition</span>
+                            <label class="switch">
+                                <input type="checkbox" id="voice-toggle" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="control-item">
+                            <span>Auto-Response</span>
+                            <label class="switch">
+                                <input type="checkbox" id="auto-response-toggle" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="control-item">
+                            <span>Neural Bridge</span>
+                            <label class="switch">
+                                <input type="checkbox" id="neural-bridge-toggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card logs-module">
+                    <div class="card-header">
+                        <h3><i class="fa-solid fa-terminal"></i> System Logs</h3>
+                    </div>
+                    <div class="log-container" id="system-logs">
+                        <div class="log-entry success">
+                            <span class="timestamp">[14:20:01]</span> System Initialized Successfully.
+                        </div>
+                        <div class="log-entry info">
+                            <span class="timestamp">[14:20:05]</span> Establishing Neural Link...
+                        </div>
+                        <div class="log-entry warning">
+                            <span class="timestamp">[14:21:12]</span> Latency detected in Sector 7G.
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Center Panel: Main Interaction Interface -->
+            <section class="main-interface">
+                <div class="visualizer-container">
+                    <div class="voice-wave" id="voice-wave">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="status-label" id="ai-status">LISTENING...</div>
+                </div>
+
+                <div class="chat-wrapper glass-card">
+                    <div class="chat-history" id="chat-history">
+                        <div class="message ai-message">
+                            <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                            <div class="text">Welcome back, Sir. All systems are operational. How can I assist you today?</div>
+                        </div>
+                    </div>
+                    <div class="input-area">
+                        <div class="input-container">
+                            <button class="action-btn" id="voice-trigger" title="Voice Command">
+                                <i class="fa-solid fa-microphone"></i>
+                            </button>
+                            <input type="text" id="user-input" placeholder="Type a command or ask anything..." autocomplete="off">
+                            <button class="action-btn send-btn" id="send-command" title="Execute Command">
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel: Analytics & Tools -->
+            <aside class="side-panel right-panel">
+                <div class="glass-card analytics-module">
+                    <div class="card-header">
+                        <h3><i class="fa-solid fa-chart-line"></i> Neural Analytics</h3>
+                    </div>
+                    <div class="analytics-content">
+                        <div class="metric">
+                            <span class="label">Cognitive Load</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 34%;"></div>
+                            </div>
+                            <span class="value">34%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Response Speed</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92%;"></div>
+                            </div>
+                            <span class="value">12ms</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Sync Rate</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%;"></div>
+                            </div>
+                            <span class="value">78%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card tools-module">
+                    <div class="card-header">
+                        <h3><i class="fa-solid fa-layer-group"></i> Quick Tools</h3>
+                    </div>
+                    <div class="tools-grid">
+                        <button class="tool-btn" data-cmd="weather">
+                            <i class="fa-solid fa-cloud-sun"></i>
+                            <span>Weather</span>
+                        </button>
+                        <button class="tool-btn" data-cmd="email">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>Emails</span>
+                        </button>
+                        <button class="tool-btn" data-cmd="calendar">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <span>Agenda</span>
+                        </button>
+                        <button class="tool-btn" data-cmd="security">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Security</span>
+                        </button>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Footer Status Bar -->
+        <footer class="system-footer">
+            <div class="footer-left">
+                <span class="status-indicator online"></span>
+                <span class="status-text">Core Engine: Active</span>
+            </div>
+            <div class="footer-center">
+                <span class="session-id">SESSION: JAR-992-X81</span>
+            </div>
+            <div class="footer-right">
+                <span class="location-tag"><i class="fa-solid fa-location-dot"></i> HQ - New York</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Project Scripts -->
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "_catatan": "Fase 4 — sakelar adaptasi suara. true = perilaku baru, false = perilaku lama (rollback). Kunci tidak dikenal diabaikan; berkas rusak/hilang = semua true.",
+  "voice.receipt_enabled": true,
+  "recall.auto": true,
+  "voice.bargein_note": true,
+  "voice.quiet_window": true,
+  "voice.turn_classify": true,
+  "trust.remember": true,
+  "voice.silence_gate": true
+}

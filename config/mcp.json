@@ -1,0 +1,26 @@
+{
+  "_note": "MCP tool servers for JARVIS. Per server: command, args, enabled, startup_timeout_s, call_timeout_s, max_tools (0 = declare every tool; a server with hundreds of tools costs payload on every session setup, and the log says what was left out). Both 'servers' and a pasted Claude-style 'mcpServers' block are accepted.",
+  "servers": {
+    "rea": {
+      "command": "cmd.exe",
+      "args": [
+        "/d",
+        "/c",
+        "npx",
+        "-y",
+        "rea-agents@6.5.0",
+        "mcp"
+      ],
+      "enabled": true,
+      "startup_timeout_s": 90,
+      "call_timeout_s": 300,
+      "max_tools": 0,
+      "env": {
+        "JAVA_HOME": "C:\\rea-tools\\jdk-21.0.12.1+1",
+        "GHIDRA_INSTALL_DIR": "C:\\rea-tools\\ghidra_12.1.4_PUBLIC",
+        "REA_ADB_PATH": "C:\\rea-tools\\platform-tools\\adb.exe",
+        "REA_APKTOOL_COMMAND": "C:\\rea-tools\\apktool\\apktool.bat"
+      }
+    }
+  }
+}

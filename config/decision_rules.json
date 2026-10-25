@@ -1,0 +1,12 @@
+{
+  "_catatan": "Aturan pintu keputusan pusat (core/decision_loop.py). Bukan rahasia. Ubah sesuai kebutuhan; berkas rusak/hilang = nilai bawaan di kode.",
+  "retry_click": {
+    "enabled": true,
+    "_catatan": "Klik tombol coba-lagi pada jendela agen koding yang error diizinkan TANPA konfirmasi, karena tidak menghapus/mengirim apa pun. Hanya berlaku untuk computer_control action=screen_click/screen_find dengan deskripsi yang memuat salah satu kata tombol di bawah. Audit 25 Okt (T-3): require_agent_window kini WAJIB — deskripsi juga harus menyebut jendela agen di bawah, karena teks deskripsi berasal dari model dan bisa disisipi kata 'retry' oleh prompt injection.",
+    "button_words": ["retry", "try again", "coba lagi", "ulangi", "ulang", "rerun", "re-run", "resume", "reconnect", "continue", "lanjutkan", "regenerate", "run again", "jalankan lagi"],
+    "agent_windows": ["workbuddy", "opencode", "open code", "cursor", "visual studio code", "vs code", "vscode", "windsurf", "trae", "copilot", "claude", "codebuddy", "zed"],
+    "require_agent_window": true,
+    "forbidden_words": ["delete", "hapus", "remove", "discard", "buang", "reset", "uninstall", "format", "send", "kirim", "pay", "bayar", "purchase", "beli"]
+  },
+  "approval_words": ["ya", "iya", "yes", "yup", "lanjut", "lanjutkan", "boleh", "silakan", "silahkan", "setuju", "oke", "ok", "okay", "gas", "gaskan", "betul", "benar", "sip"]
+}

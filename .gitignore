@@ -1,0 +1,95 @@
+# ── JARVIS — what never belongs in the repository ─────────────────────────────
+# Everything listed here is created by the app on first run, or is private to the
+# developer's machine. A fresh clone with none of it present boots straight to the
+# setup screen — the intended first experience — so nothing here needs committing,
+# and much of it must NEVER be.
+
+# ── Secrets. Committing any of these publishes them. ──────────────────────────
+# NOTE: git does not allow a trailing comment on a pattern line ("pola  # comment"
+# would be read as a literal pattern). Keep comments on their own line.
+# your Gemini API key, plus per-plugin credentials (and their .bak copies)
+config/api_keys.json
+config/api_keys.json.bak
+# the dashboard's TLS private key and certificate
+config/certs/
+# a LINKED WhatsApp session — committing it hands somebody your WhatsApp account
+config/whatsapp_web/
+# cloud link: private key + link record
+cloud_state/
+*.pem
+*.key
+# Google OAuth tokens (Gmail / Calendar plugins)
+**/token*.json
+# Google OAuth client secrets
+**/client_secret*.json
+*credentials*.json
+.env
+.env.*
+
+# ── Personal data the assistant accumulates about you ─────────────────────────
+# Long-term memory, semantic recall, audit trail, calendars, trusted-tool state,
+# recent files, macros, vision watchers, reminders, and every backup of them.
+memory/long_term.json
+memory/long_term.json.bak
+memory/*.bak
+memory/*.bak-*
+memory/semantic.jsonl
+memory/audit.jsonl
+memory/calendar_cache.ics
+memory/calendar_state.json
+memory/jobs_state.json
+memory/tool_trust.json
+memory/recent_files.json
+memory/macros.json
+memory/vision_watchers.json
+memory/water_state.json
+memory/sent_recipients.json
+memory/workspace.json
+memory/*.db
+# secondary local assistant store
+.workbuddy-ai/
+
+# ── Internal developer notes & audit reports (not for a public portfolio) ─────
+AUDIT-KRITIS-*.md
+TRAINER-REPORT-*.md
+_audit_tmp/
+_archive/
+_final.png
+_hud_grad.png
+# _refwork is developer scratch (screenshots, probes, trainer/bisect scripts).
+# Keep ONLY the sonde_*.py probes that run_tests.py actually executes.
+_refwork/*
+!_refwork/sonde_*.py
+
+# ── Python build noise ────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── Virtual environments (covers .venv, .venv313, venv, env, ...) ─────────────
+.venv*/
+venv/
+env/
+ENV/
+
+# ── Editors and operating systems ─────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Runtime output ────────────────────────────────────────────────────────────
+*.log
+logs/
+downloads/
+screenshots/

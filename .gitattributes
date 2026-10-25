@@ -1,2 +1,33 @@
-# Auto detect text files and perform LF normalization
+# ── Line endings ───────────────────────────────────────────────────────────────
+# Normalise to LF in the repository; let Git decide on checkout per platform.
+# This keeps diffs clean when the project is opened on Windows, macOS and Linux.
 * text=auto
+
+# Source and text files: LF in the repo.
+*.py    text
+*.txt   text
+*.md    text
+*.json  text
+*.yml   text
+*.yaml  text
+*.toml  text
+*.cfg   text
+*.ini   text
+*.sh    text eol=lf
+*.bat   text eol=crlf
+
+# ── Binary files: never treat as text, never diff ──────────────────────────────
+*.obj   binary
+*.ico   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.wav   binary
+*.mp3   binary
+*.onnx  binary
+*.ttf   binary
+
+# ── GitHub linguist hints ──────────────────────────────────────────────────────
+# Keep the language statistics focused on the actual application source.
+LICENSE        linguist-documentation
+*.md           linguist-documentation
